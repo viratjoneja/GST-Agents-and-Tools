@@ -1,0 +1,9 @@
+crewai[tools]>=0.80.0
+anthropic
+google-generativeai
+pandas
+openpyxl
+xlrd
+httpx
+nest_asyncio
+python-docx
