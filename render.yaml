@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: gst-agents-tools
+    env: python
+    region: singapore
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT --timeout-keep-alive 600
+    envVars:
+      - key: GOOGLE_API_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: LANGSMITH_API_KEY
+        sync: false
+      - key: LANGSMITH_PROJECT
+        value: gstr1agent
+      - key: LANGSMITH_TRACING
+        value: "true"
+      - key: PYTHON_VERSION
+        value: "3.11.0"
